@@ -43,7 +43,7 @@ function! GetPugIndent()
   let cindent = indent(v:lnum)
   let increase = indent + &sw
   if indent == indent(lnum)
-    let indent = cindent <= indent ? -1 : increase
+    let indent = cindent <= indent ? indent : increase
   endif
 
   let group = synIDattr(synID(lnum,lastcol,1),'name')
